@@ -1,0 +1,2 @@
+class SystemLabel < Label
+end
