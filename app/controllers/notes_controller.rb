@@ -1,4 +1,6 @@
 class NotesController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   before_action :set_response_format_to_json
 
   def create
