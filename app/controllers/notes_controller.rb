@@ -17,10 +17,8 @@ class NotesController < ApplicationController
     @notes = Note.order(created_at: :desc)
     @notes = if params["label_names"]
       @notes.joins(:labels).where("labels.name" => params["label_names"])
-    elsif params["label_names_not"]
-      @notes.left_outer_joins(:labels).where.not("labels.name" => params["label_names_not"]).or(Note.where("labels.name" => nil))
     else
-      @notes.all
+      @notes.left_outer_joins(:labels).where.not("labels.name" => ["trash"]).or(Note.where("labels.name" => nil))
     end
   end
 
