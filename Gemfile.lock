@@ -95,6 +95,7 @@ GEM
     ffi (1.14.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    honeybadger (4.7.3)
     i18n (1.8.9)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
@@ -246,6 +247,7 @@ DEPENDENCIES
   database_cleaner-active_record
   factory_bot_rails
   faker
+  honeybadger
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg
